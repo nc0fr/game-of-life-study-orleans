@@ -1,0 +1,24 @@
+{
+    "name": "@nc0/life2-simulator",
+    "version": "1.0.0",
+    "description": "The Life 2 project's simulation platform",
+    "keywords": ["life2", "simulation", "platform", "game", "of", "life"],
+    "homepage": "https://life2.nc0.fr",
+    "bugs": {
+        "url": "https://github.com/nc0fr/life2/issues",
+        "email": "n@nc0.fr"
+    },
+    "license": "SEE IN COPYRIGHT",
+    "author": {
+        "name": "Nicolas Paul",
+        "email": "n@nc0.fr",
+        "url": "https://nc0.fr"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nc0fr/life2.git",
+        "directory": "life2/simulator"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}
