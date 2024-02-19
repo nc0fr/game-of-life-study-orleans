@@ -1,0 +1,19 @@
+{
+    "name": "@nc0/life2-workspace",
+    "private": true,
+    "description": "Workspace for the Life 2 project.",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nc0fr/life2"
+    },
+    "author": {
+        "name": "Nicolas Paul",
+        "email": "n@nc0.fr",
+        "url": "https://nc0.fr"
+    },
+    "license": "COPYRIGHT",
+    "workspaces": [
+        "life2/simulator"
+    ]
+}

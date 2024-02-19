@@ -1,0 +1,5 @@
+Simulator
+=========
+
+Simulator est une application Web de simulation du Jeu de la Vie de Conway qui
+permet l'ajout dynamyque de règles et de cellules pendant l'exécution.
