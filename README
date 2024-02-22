@@ -1,5 +1,40 @@
-Étude sur le Jeu de la Vie
-==========================
 
-Unité d'enseignement d'Ouverture (UEO) de l'Université d'Orléans
 
+                    __       __   _______  _______     ___
+                   |  |     |  | |   ____||   ____|   |__ \
+                   |  |     |  | |  |__   |  |__         ) |
+                   |  |     |  | |   __|  |   __|       / /
+                   |  `----.|  | |  |     |  |____     / /_
+                   |_______||__| |__|     |_______|   |____|
+
+
+
+LIFE2
+
+   Life 2 est un projet de simulation basé sur le jeu de la vie de Conway [0],
+   étendu avec un support dynamique de règles.  L'objectif du projet est de
+   pouvoir analyser et illustrer le comportement de différentes règles de
+   jeu sur un ensemble de cellules.
+
+   Chaque cellule peut appartenir à un plus grand ensemble de cellules, pouvant
+   amener à des comportements complexes et intéressants lorsque différents
+   ensembles se rencontrent (guerre de territoire, symbiose, etc.).
+
+   [0]: https://fr.wikipedia.org/wiki/Jeu_de_la_vie
+
+
+ÉTUDE
+
+   Ce projet est une étude réalisée dans le cadre de l'Unité d'Enseignement
+   d'Ouverture "Articles Scientifiques" de la licence informatique de
+   l'UFR Sciences et Techniques de l'Université d'Orléans [1].
+
+   [1]: https://www.univ-orleans.fr/fr/sciences-techniques
+
+
+COPYRIGHT
+
+   L'intégralité du projet est la propriété de ses auteurs.  Toute reproduction
+   non-autorisée est strictement interdite par la loi.
+
+   Copyright (c) 2024 The Life 2 Authors.  All rights reserved.
