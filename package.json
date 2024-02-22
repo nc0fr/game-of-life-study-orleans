@@ -26,5 +26,7 @@
     "email": "n@nc0.fr"
   },
   "homepage": "https://github.com/nc0fr/life2#readme",
-  "workspaces": []
+  "workspaces": [
+    "life2/simulator"
+  ]
 }

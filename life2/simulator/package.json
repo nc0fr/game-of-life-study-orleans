@@ -1,0 +1,37 @@
+{
+  "name": "@nc0/life2-simulator",
+  "version": "1.0.0",
+  "description": "A evolved and complete simulation program for variants of Conway's Game of Life, allowing dynamic rules and custom cell states.",
+  "keywords": [
+    "game of life",
+    "simulation",
+    "cellular automata",
+    "conway",
+    "evolved",
+    "complete",
+    "dynamic rules",
+    "custom cell states"
+  ],
+  "homepage": "https://github.com/nc0fr/life2/tree/master/life2/simulator#readme",
+  "bugs": {
+    "url": "https://github.com/nc0fr/life2/issues",
+    "email": "n@nc0.fr"
+  },
+  "license": "SEE LICENSE IN COPYRIGHT",
+  "author": "Nicolas Paul <n@nc0.fr> (https://nc0.fr)",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/nc0fr"
+  },
+  "browser": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nc0fr/life2.git",
+    "directory": "life2/simulator"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
