@@ -1,0 +1,30 @@
+{
+  "name": "@nc0/life2-workspace",
+  "version": "1.0.0",
+  "description": "Workspace for the Life 2 project",
+  "private": true,
+  "license": "SEE LICENSE IN COPYRIGHT",
+  "packageManager": "npm@10.2.4",
+  "engines": {
+        "node": ">=20.11.1",
+        "npm": ">=10.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nc0fr/life2.git"
+  },
+  "keywords": [
+    "game",
+    "of",
+    "life",
+    "cellular",
+    "automate"
+  ],
+  "author": "Nicolas Paul <n@nc0.fr> (https://nc0.fr)",
+  "bugs": {
+    "url": "https://github.com/nc0fr/life2/issues",
+    "email": "n@nc0.fr"
+  },
+  "homepage": "https://github.com/nc0fr/life2#readme",
+  "workspaces": []
+}
