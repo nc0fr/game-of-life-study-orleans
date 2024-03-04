@@ -1,7 +1,7 @@
 {
   "name": "@nc0/life2-simulator",
   "version": "1.0.0",
-  "description": "A evolved and complete simulation program for variants of Conway's Game of Life, allowing dynamic rules and custom cell states.",
+  "description": "An evolved and complete simulation program for variants of Conway's Game of Life, allowing dynamic rules and custom cell states.",
   "keywords": [
     "game of life",
     "simulation",
@@ -26,12 +26,15 @@
   "browser": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nc0fr/life2.git",
+    "url": "https://github.com/nc0fr/life2.git",
     "directory": "life2/simulator"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "5.3.3",
+    "webpack": "5.90.3",
+    "webpack-cli": "5.1.4"
+  }
 }
