@@ -4,5 +4,14 @@
         "LICENSE": "plaintext",
         "AUTHORS": "plaintext",
         "NOTICE": "plaintext"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "xaver.clang-format"
     }
 }
