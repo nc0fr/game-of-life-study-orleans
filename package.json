@@ -14,5 +14,9 @@
   "homepage": "https://github.com/nc0fr/life2#readme",
   "workspaces": [
     "life2/simulator"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "eslint-config-closure-es6": "0.1.1"
+  }
 }
