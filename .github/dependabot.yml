@@ -1,0 +1,21 @@
+enable-beta-ecosystems: true
+version: 2
+updates:
+  - directory: /
+    package-ecosystem: npm
+    rebase-strategy: auto
+    assignees: [nc0fr]
+    insecure-external-code-execution: deny
+    open-pull-requests-limit: 20
+    target-branch: master
+    schedule:
+      interval: monthly
+  - directory: /
+    package-ecosystem: github-actions
+    rebase-strategy: auto
+    assignees: [nc0fr]
+    insecure-external-code-execution: deny
+    open-pull-requests-limit: 20
+    target-branch: master
+    schedule:
+      interval: monthly
