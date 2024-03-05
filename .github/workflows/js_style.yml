@@ -1,0 +1,42 @@
+name: JavaScript Style Guide
+on:
+  push:
+    paths: ["*.js", "*.cjs", ".github/workflows/js_style.yml"]
+  pull_request:
+    paths: ["*.js", "*.cjs", ".github/workflows/js_style.yml"]
+env:
+  CI: true
+  NODE_VERSION: 20
+jobs:
+  clangFormat:
+    name: Clang-Format
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+      - name: Install Clang-Format
+        run: sudo apt-get install clang-format
+      - name: Run Clang-Format
+        run: npm run fmt
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Run ESLint
+        run: npm run lint
