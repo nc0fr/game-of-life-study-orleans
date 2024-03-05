@@ -18,8 +18,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "fmt": "clang-format --dry-run -i *.cjs *.js",
-    "fmt:fix": "clang-format -i *.cjs *.js",
+    "fmt": "clang-format --dry-run life2/simulator/src/*.js",
+    "fmt:fix": "clang-format -i life2/simulator/src/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
