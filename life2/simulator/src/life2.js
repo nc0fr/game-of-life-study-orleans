@@ -1,18 +1,16 @@
-/**
- * @license Copyright 2024 The Life2 Authors
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2024 The Life2 Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 /**
  * @fileoverview Life2.
@@ -34,7 +32,7 @@ export const CellStates = {
   /** A cell belonging to team B. */
   TEAM_B: 2,
   /** A barrier cell. */
-  BARRIER: 3
+  BARRIER: 3,
 };
 
 /**
@@ -82,7 +80,7 @@ export class World {
    * Initializes an empty board filled with empty cells.
    * @param {number} width The width of the board.
    * @param {number} height The height of the board.
-   * @returns {!Array<!Board>} The empty board.
+   * @return {!Array<!Board>} The empty board.
    * @throws {RangeError}
    * @final @private
    */
@@ -96,13 +94,12 @@ export class World {
    * Get the cell at a specific position.
    * @param {number} x The x position of the cell.
    * @param {number} y The y position of the cell.
-   * @returns {!CellStates} The cell at the position.
+   * @return {!CellStates} The cell at the position.
    * @throws {RangeError}
    * @final
    */
   getCell(x, y) {
-    if (this.isOutOfBounds_(x, y))
-      throw new RangeError('position out of bounds');
+    if (this.isOutOfBounds_(x, y)) throw RangeError('position out of bounds');
 
     return this.board_[x][y];
   }
@@ -119,18 +116,20 @@ export class World {
    * @final
    */
   setCell(x, y, cell) {
-    if (this.isOutOfBounds_(x, y))
+    if (this.isOutOfBounds_(x, y)) {
       throw new RangeError('position out of bounds');
+    }
 
-    if (cell < CellStates.EMPTY || cell > CellStates.BARRIER)
+    if (cell < CellStates.EMPTY || cell > CellStates.BARRIER) {
       throw new TypeError('cell must be a valid Cell');
+    }
 
     this.board_[x][y] = cell;
   }
 
   /**
    * Get the board.
-   * @returns {!Board} The board.
+   * @return {!Board} The board.
    * @final
    */
   getBoard() {
@@ -141,7 +140,7 @@ export class World {
    * Check if a position is out of bounds.
    * @param {number} x The x position of the cell.
    * @param {number} y The y position of the cell.
-   * @returns {boolean} True if the position is out of bounds, false otherwise.
+   * @return {boolean} True if the position is out of bounds, false otherwise.
    * @final @private
    */
   isOutOfBounds_(x, y) {
@@ -152,17 +151,24 @@ export class World {
    * Get the adjacent neighbors of a cell.
    * @param {number} x The x position of the cell.
    * @param {number} y The y position of the cell.
-   * @returns {!Array<!CellStates>} The neighbors of the cell.
+   * @return {!Array<!CellStates>} The neighbors of the cell.
    * @throws {RangeError}
    * @final @private
    */
   getNeighbors_(x, y) {
-    if (this.isOutOfBounds_(x, y))
+    if (this.isOutOfBounds_(x, y)) {
       throw new RangeError('position out of bounds');
+    }
 
     return [
-      (x - 1, y - 1), (x, y - 1), (x + 1, y - 1), (x - 1, y), (x + 1, y),
-      (x - 1, y + 1), (x, y + 1), (x + 1, y + 1)
+      (x - 1, y - 1),
+      (x, y - 1),
+      (x + 1, y - 1),
+      (x - 1, y),
+      (x + 1, y),
+      (x - 1, y + 1),
+      (x, y + 1),
+      (x + 1, y + 1),
     ].filter((x, y) => !this.isOutOfBounds_(x, y))
         .map((x, y) => this.getCell(x, y));
   }
@@ -170,10 +176,12 @@ export class World {
   /**
    * Execute the rules of the game to determine the next state of a cell.
    * @param {!CellStates} cell The current state of the cell.
-   * @returns {!CellStates} The next state of the cell.
+   * @param {number} x The x position of the cell.
+   * @param {number} y The y position of the cell.
+   * @return {!CellStates} The next state of the cell.
    * @final @private
    */
-  nextCellState_(cell) {
+  nextCellState_(cell, x, y) {
     // 1. Barrier cells don't change.
     // 2. Empty cells become the team with the most neighbors.
     // 3. Filled cells with less than 2 neighbors of the same team become empty.
@@ -189,19 +197,21 @@ export class World {
 
     // (2)
     if (cell === CellStates.EMPTY) {
-      if (neighborsA.length > neighborsB.length) return CellStates.TEAM_A
-        return CellStates.TEAM_B;
+      if (neighborsA.length > neighborsB.length) return CellStates.TEAM_A;
+      return CellStates.TEAM_B;
     }
 
     // (3)
     if ((cell === CellStates.TEAM_A && neighborsA.length < 2) ||
-        (cell === CellStates.TEAM_B && neighborsB.length < 2))
+        (cell === CellStates.TEAM_B && neighborsB.length < 2)) {
       return CellStates.EMPTY;
+    }
 
     // (4)
     if ((cell === CellStates.TEAM_A && neighborsA.length <= 3) ||
-        (cell === CellStates.TEAM_B && neighborsB.length <= 3))
+        (cell === CellStates.TEAM_B && neighborsB.length <= 3)) {
       return cell;
+    }
 
     // (5)
     return CellStates.EMPTY;
@@ -214,7 +224,9 @@ export class World {
   nextState() {
     const nextBoard =
         this.initializeBoard_(this.width, this.height).forEach((row, x) => {
-          row = row.map((cell) => {this.nextCellState_(cell)});
+          row.map((cell, y) => {
+            this.nextCellState_(cell, x, y);
+          });
         });
     this.board_ = nextBoard;
   }
