@@ -21,5 +21,6 @@
  * @package life2
  */
 
+export {Board, Grid} from './board';
 export {Cell} from './cell';
 export {Rule, RuleFunction} from './rule';
