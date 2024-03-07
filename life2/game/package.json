@@ -1,0 +1,34 @@
+{
+    "name": "@life2/game",
+    "version": "0.1.0",
+    "description": "Node.js implementation of the Life2 game.",
+    "keywords": [
+        "cellular",
+        "automaton",
+        "game",
+        "life"
+    ],
+    "homepage": "https://github.com/nc0fr/life2/tree/master/life2/game#readme",
+    "bugs": {
+      "url": "https://github.com/nc0fr/life2/issues",
+      "email": "n@nc0.fr"
+    },
+    "license": "Apache-2.0",
+    "author": "The Life2 Authors",
+    "contributors": [
+        "Nicolas Paul <n@nc0.fr> (https://nc0.fr)"
+    ],
+    "funding": {
+      "type": "individual",
+      "url": "https://github.com/sponsors/nc0fr"
+    },
+    "browser": true,
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/nc0fr/life2.git",
+      "directory": "life2/game"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    }
+  }
