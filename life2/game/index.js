@@ -22,3 +22,4 @@
  */
 
 export {Cell} from './cell';
+export {Rule, RuleFunction} from './rule';
