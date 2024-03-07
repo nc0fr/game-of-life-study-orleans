@@ -26,7 +26,7 @@
  * @package life2
  */
 
-import {Cell} from './index';
+import {Cell} from './cell';
 
 /**
  * The mathematical function bodies that is applied to a cell.
