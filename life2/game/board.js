@@ -17,8 +17,6 @@
 
 /**
  * @fileoverview A board is a grid of cells in a certain shape and size.
- * The board is responsible for computing the next state of the game based on
- * its current state and a set of rules.
  * To make the game more interesting, the board can be configured to have
  * different 2D shapes (from the classic rectangle to more complex shapes like
  * hexagons).
@@ -66,8 +64,9 @@ export let Grid;
 
 /**
  * A board is a grid of cells shaped after any valid 2D shape.
- * The board is responsible for computing the next state of the game based on
- * its current state and a set of rules that is passed to it.
+ * The board is only responsible for storing the cells and their state in a
+ * geometric shape.  It does not apply any rules or logic to the cells, that is
+ * the responsibility of the World.
  * @interface
  */
 export class Board {
@@ -95,12 +94,6 @@ export class Board {
    * @abstract
    */
   getNeighbors(x, y) {}
-  /**
-   * Calculate the next state of the board based on a set of rules.
-   * @param {!Array<!Rule>} rules The rules to apply to the board.
-   * @abstract
-   */
-  calculateNextState(rules) {}
   /**
    * Check if a position is out of bounds.
    * @param {number} x The x position of the cell.

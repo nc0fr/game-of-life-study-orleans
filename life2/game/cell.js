@@ -18,7 +18,7 @@
 /**
  * @fileoverview Implementation of a cell in the Life2 game.
  * Cells are the smallest unit of the game, they carry information about their
- * aliveness and their team, but everything else is computed by the board
+ * aliveness and their team, but everything else is computed by the game World
  * (interactions, changes, ...).
  *
  * @package life2

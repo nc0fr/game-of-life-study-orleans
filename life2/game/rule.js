@@ -20,7 +20,7 @@
  * the next state of a cell based on its current state within a board.
  * Rules are functions that either return a new cell state, or nothing if they
  * don't apply to the cell.
- * The final choice for a cell state is made by the board, using all the results
+ * The final choice for a cell state is made by the World, using all the results
  * from the multiple rules being applied to the cell.
  *
  * @package life2
