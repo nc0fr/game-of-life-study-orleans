@@ -36,4 +36,6 @@ export const Cell = {
   TEAM_A: 1,
   /** The cell is filled with the color of the second team. */
   TEAM_B: 2,
+  /** The cell is a barrier, it is never affected by rules. */
+  BARRIER: 3,
 };

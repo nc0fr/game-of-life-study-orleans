@@ -88,6 +88,7 @@ export class Rule {
    * apply to the cell.
    */
   execute(cell, neighbors) {
+    if (cell === Cell.BARRIER) return null;
     return this.expression_(cell, neighbors);
   }
 }
