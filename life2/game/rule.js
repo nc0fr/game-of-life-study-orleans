@@ -89,6 +89,14 @@ export class Rule {
    */
   execute(cell, neighbors) {
     if (cell === Cell.BARRIER) return null;
-    return this.expression_(cell, neighbors);
+    const state = this.expression_(cell, neighbors);
+
+    // Check if the rule returned a valid state.
+    if (state !== Cell.TEAM_A && state !== Cell.TEAM_B &&
+        state !== Cell.EMPTY) {
+      throw new Error(`Rule '${this.name}' returned an invalid state.`);
+    }
+
+    return state;
   }
 }

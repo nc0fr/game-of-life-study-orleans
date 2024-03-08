@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "eslint": "8.57.0",
-    "eslint-config-closure-es6": "0.1.1"
+    "eslint-config-closure-es6": "0.1.1",
+    "jsdoc": "4.0.2"
   }
 }
