@@ -1,0 +1,25 @@
+
+                                  @life2/game
+
+
+   Introduction
+
+@life2/game is a JavaScript implementation of the Life2 simulation game.
+It is supposed to work on any modern ECMAScript 5+ runtimes, including
+V8-based machines (Node.js, Google Chrome, ...), and other engines.
+
+The Life2 simulation game is a cellular automaton software where two societies
+are created and populated by cells.  The game is based on the same ideas
+behind Conway's Game of Life, except it is flexible enough to allow external
+rules, and it separates cells in two teams (so called "groups" or "societies").
+
+The principal objectives behind Life2 is to analyze the behavior of societies
+given the rules we defined for them.  For example, how does members of
+different societies interact with each other?
+
+To install and use this software, please read:
+
+  1.  The INSTALL file for installation instructions.
+  2.  The MANUAL file for usage instructions, including documentation of
+      the API.
+  3.  The LICENSE file for licensing information.

@@ -1,0 +1,122 @@
+
+                            MANUAL DOCUMENTATION FOR
+                                  @life2/game
+
+
+This document provides usage notices and extensive documentations about the API
+exposed by the @life2/game JavaScript package.  Please also consider looking
+at the source files in the same directory to learn more.
+
+
+   Copyright Notice
+
+This manual is written by Nicolas Paul.  The author decided to publish and
+distribute this document under the terms of the Creative Commons Attribution
+4.0 International license agreement (CC 4.0).  You can find a copy of the
+agreement in the CC-4.0 file.
+
+
+   Introduction
+
+@life2/game is a JavaScript implementation of the Life2 simulation game, which
+is expected to be used in Web browsers, such as the Life2 Web Simulation Tool.
+
+Life2 is a cellular automaton similar to Conway's Game of Life, with the
+particularity that the cells can be members of societies (Life2 allows only
+two societies, hence the "2" in the name).
+Games of Life2 happen in a two-dimensional space.  This package provides a
+third type of cells entitled BARRIERs which are immutable.  They can be used
+to create shaped-boards, such as circles.
+
+    #################
+    ####...###...####     HEARTH SHAPED GAME BOARD
+    ##......#......##
+    #...............#     Board size: 17x7
+    ##.............##     "#" are BARRIER cells, "." are EMPTY cells.
+    ####.........####
+    ######.....######
+    ########.########
+    #################
+
+The main goals of Life2 is to study the maths behind the interaction between
+cells from the same team, as well as the behavior of societies between each
+others in specific configurations.
+
+
+   Installation
+
+Since @life2/game is a NPM package, it can be installed using any NPM-compatible
+toolchain:
+
+    npm install -E @life2/game
+
+See more detailed information in the INSTALL file.
+
+
+   World, the Entry Point of All Life2 Games
+
+The entry point for every Life2 simulations start with the World class.  This
+class consists of a facade between your code and the internal game state.
+Indeed, to start a simulation, users are expected to instantiate a new World
+object with a board and, optionally, a list of rules.
+
+The board, an instance of Board, describes the game board that will be used
+within the simulation.  Boards are pretty flexible, as they can describe any
+shapes (as seen earlier).  Rules are mathematical functions that are used by
+the World to determine the next state of a cell.
+
+Given b any board, and r a list of rules, we can create a new game using:
+
+    import {World} from 'life2';
+
+    const game = new World(b, r);
+
+Do note that the second parameter (the list of rules), is optional.  Rules may
+be added later via the World.rules interface.
+
+The class World exposes a limited API, reducing the chances of corrupting the
+simulation state:
+
+  * World.board: access to the Board class defining the board used by the
+    simulation.
+
+  * World.rules: a RulesManager facade that is responsible for managing rules,
+    such as registering or removing rules on-the-fly.
+
+  * World.nextState(): simulates a movement forward in time, calculating the
+    new state of the board and applying it to the simulation.  The new state
+    is determined by applying, for each non BARRIER cells, all the registered
+    rules, obtaining an array of cell states.  Then, the array list is reduced
+    to only return the most occurring element, which will be the new state for
+    this cell.  We save this new cell in a copy of the board, the copy will be
+    assigned to World.board once all cells have been computed.
+
+
+   RulesManager, an Utility Facade
+
+The class RulesManager serves as another facade to manage the registration of
+rules within a World.  The registration of rules is important as it can be done
+"on-the-fly" (between two World.nextState() calls), which can allow the
+development of interface debugging interfaces for Life2 simulations.
+
+You are not expected to instantiate RulesManager classes by yourself, but
+simply use the public methods it exposes.  Each World instance has its own
+RulesManager, available via World.rules.
+
+The public API for a RulesManager is:
+
+  * getAll(): returns the list of all registered rules in the manager.
+
+  * add(rule): registers a rule into the manager, or throws an error if it is
+    already registered.  Registered rules are used by the World to calculate
+    the states of cells.
+
+  * remove(rule): removes a rule from the manager.
+
+  * has(rule): checks whether or not the passed rule is already registered.
+
+
+   Rule, the Way to Manipulate Societies
+
+TODO
+
