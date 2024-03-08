@@ -1,6 +1,6 @@
 {
     "name": "@life2/game",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Node.js implementation of the Life2 game.",
     "keywords": [
         "cellular",
@@ -28,7 +28,26 @@
       "url": "https://github.com/nc0fr/life2.git",
       "directory": "life2/game"
     },
+    "files": [
+        "CC-4.0",
+        "INSTALL",
+        "LICENSE",
+        "MANUAL",
+        "README",
+        "board.js",
+        "cell.js",
+        "index.js",
+        "rule.js",
+        "rules_manager.js",
+        "world.js"
+    ],
+    "main": "./index.js",
+    "readme": "README",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "exit 0",
+      "lint": "eslint .",
+      "lint-fix": "eslint --fix .",
+      "fmt": "clang-format -i *.js",
+      "fmt-check": "clang-format --dry-run --Werror *.js"
     }
   }
