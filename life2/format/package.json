@@ -1,0 +1,47 @@
+{
+    "name": "@life2/format",
+    "version": "1.0.0",
+    "description": "Textual representation format of a Life2 board state.",
+    "keywords": [
+        "cellular",
+        "automaton",
+        "game",
+        "life"
+    ],
+    "homepage": "https://github.com/nc0fr/life2/tree/master/life2/format#readme",
+    "bugs": {
+        "url": "https://github.com/nc0fr/life2/issues",
+        "email": "n@nc0.fr"
+    },
+    "license": "Apache-2.0",
+    "author": "The Life2 Authors",
+    "contributors": [
+        "Nicolas Paul <n@nc0.fr> (https://nc0.fr)"
+    ],
+    "funding": {
+        "type": "individual",
+        "url": "https://github.com/sponsors/nc0fr"
+    },
+    "browser": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nc0fr/life2.git",
+        "directory": "life2/format"
+    },
+    "files": [
+        "LICENSE",
+        "README.md",
+        "index.js"
+    ],
+    "main": "./index.js",
+    "readme": "README.md",
+    "scripts": {
+        "lint": "eslint .",
+        "lint-fix": "eslint --fix .",
+        "fmt": "clang-format -i *.js",
+        "fmt-check": "clang-format --dry-run --Werror *.js"
+    },
+    "dependencies": {
+        "@life2/game": "1.0.0"
+    }
+}

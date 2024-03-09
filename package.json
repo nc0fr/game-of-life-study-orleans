@@ -13,7 +13,9 @@
   },
   "homepage": "https://github.com/nc0fr/life2#readme",
   "workspaces": [
-    "life2/simulator"
+    "life2/simulator",
+    "life2/game",
+    "life2/format"
   ],
   "scripts": {
     "lint": "eslint .",
