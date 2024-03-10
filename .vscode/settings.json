@@ -13,5 +13,8 @@
     },
     "[jsonc]": {
         "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "none"
     }
 }

@@ -36,13 +36,16 @@
     "readme": "README",
     "scripts": {
       "test": "exit 0",
-      "lint": "eslint .",
+      "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
       "lint-fix": "eslint --fix .",
       "fmt": "clang-format -i *.js",
-      "fmt-check": "clang-format --dry-run --Werror *.js"
+      "fmt-check": "clang-format --dry-run --Werror *.js",
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview"
     },
     "dependencies": {
         "@life2/game": "1.0.0",
         "@life2/format": "1.0.0"
     }
-  }
+}
