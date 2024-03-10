@@ -1,35 +1,48 @@
 {
-  "name": "@nc0/life2-simulator",
-  "version": "1.0.0",
-  "description": "An evolved and complete simulation program for variants of Conway's Game of Life, allowing dynamic rules and custom cell states.",
-  "keywords": [
-    "game of life",
-    "simulation",
-    "cellular automata",
-    "conway",
-    "evolved",
-    "complete",
-    "dynamic rules",
-    "custom cell states"
-  ],
-  "homepage": "https://github.com/nc0fr/life2/tree/master/life2/simulator#readme",
-  "bugs": {
-    "url": "https://github.com/nc0fr/life2/issues",
-    "email": "n@nc0.fr"
-  },
-  "license": "Apache-2.0",
-  "author": "Nicolas Paul <n@nc0.fr> (https://nc0.fr)",
-  "funding": {
-    "type": "individual",
-    "url": "https://github.com/sponsors/nc0fr"
-  },
-  "browser": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nc0fr/life2.git",
-    "directory": "life2/simulator"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "name": "@life2/simulator",
+    "version": "1.0.0",
+    "description": "Web application to simulate Life2 games",
+    "keywords": [
+        "cellular",
+        "automaton",
+        "game",
+        "life"
+    ],
+    "homepage": "https://github.com/nc0fr/life2/tree/master/life2/simulator#readme",
+    "bugs": {
+      "url": "https://github.com/nc0fr/life2/issues",
+      "email": "n@nc0.fr"
+    },
+    "license": "Apache-2.0",
+    "author": "The Life2 Authors",
+    "contributors": [
+        "Nicolas Paul <n@nc0.fr> (https://nc0.fr)"
+    ],
+    "funding": {
+      "type": "individual",
+      "url": "https://github.com/sponsors/nc0fr"
+    },
+    "browser": true,
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/nc0fr/life2.git",
+      "directory": "life2/simulator"
+    },
+    "files": [
+        "LICENSE",
+        "README"
+    ],
+    "main": "./index.js",
+    "readme": "README",
+    "scripts": {
+      "test": "exit 0",
+      "lint": "eslint .",
+      "lint-fix": "eslint --fix .",
+      "fmt": "clang-format -i *.js",
+      "fmt-check": "clang-format --dry-run --Werror *.js"
+    },
+    "dependencies": {
+        "@life2/game": "1.0.0",
+        "@life2/format": "1.0.0"
+    }
   }
-}
