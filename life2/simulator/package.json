@@ -2,6 +2,7 @@
     "name": "@life2/simulator",
     "version": "1.0.0",
     "description": "Web application to simulate Life2 games",
+    "private": true,
     "keywords": [
         "cellular",
         "automaton",
@@ -10,8 +11,8 @@
     ],
     "homepage": "https://github.com/nc0fr/life2/tree/master/life2/simulator#readme",
     "bugs": {
-      "url": "https://github.com/nc0fr/life2/issues",
-      "email": "n@nc0.fr"
+        "url": "https://github.com/nc0fr/life2/issues",
+        "email": "n@nc0.fr"
     },
     "license": "Apache-2.0",
     "author": "The Life2 Authors",
@@ -19,14 +20,14 @@
         "Nicolas Paul <n@nc0.fr> (https://nc0.fr)"
     ],
     "funding": {
-      "type": "individual",
-      "url": "https://github.com/sponsors/nc0fr"
+        "type": "individual",
+        "url": "https://github.com/sponsors/nc0fr"
     },
     "browser": true,
     "repository": {
-      "type": "git",
-      "url": "https://github.com/nc0fr/life2.git",
-      "directory": "life2/simulator"
+        "type": "git",
+        "url": "https://github.com/nc0fr/life2.git",
+        "directory": "life2/simulator"
     },
     "files": [
         "LICENSE",
@@ -35,17 +36,19 @@
     "main": "./index.js",
     "readme": "README",
     "scripts": {
-      "test": "exit 0",
-      "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-      "lint-fix": "eslint --fix .",
-      "fmt": "clang-format -i *.js",
-      "fmt-check": "clang-format --dry-run --Werror *.js",
-      "dev": "vite",
-      "build": "vite build",
-      "preview": "vite preview"
+        "test": "exit 0",
+        "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+        "lint-fix": "eslint --fix .",
+        "fmt": "clang-format -i *.js",
+        "fmt-check": "clang-format --dry-run --Werror *.js",
+        "build": "webpack"
     },
     "dependencies": {
-        "@life2/game": "1.0.0",
-        "@life2/format": "1.0.0"
+        "@life2/format": "1.0.0",
+        "@life2/game": "1.0.0"
+    },
+    "devDependencies": {
+        "webpack": "5.90.3",
+        "webpack-cli": "5.1.4"
     }
 }

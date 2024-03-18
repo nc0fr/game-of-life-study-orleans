@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Life2 Web Simulator</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./style.css">
 <main id="board">
+    <canvas id="board-canvas"></canvas>
 </main>
 <aside>
     <div id="simulation-control">
@@ -15,20 +16,10 @@
     </div>
     <div id="board-control">
         <p>
-            <button id="clear">Effacer</button>
-            <button id="random">Aléatoire</button>
-        <p>
-            <label for="shape">Forme</label>
-            <select id="shape">
-                <option value="shape-rectangle">Rectangle</option>
-                <option value="shape-circle">Cercle</option>
-                <option value="shape-triangle">Triangle</option>
-            </select>
-        <p>
-            <button id="save">Sauvegarder la grille</button>
-        <p>
-            <label for="load">Charger une grille</label>
-            <input id="load" type="file">
+            <button id="save" onclick="Simulator_save()">
+                Sauvegarder la grille</button>
+            <button id="load" onclick="Simulator_load()">
+                Charger la grille</button>
     </div>
 </aside>
 <footer>
@@ -46,4 +37,4 @@
                          <span id="births-b-stats">0</span>
     </ul>
 </footer>
-<script src="simulator.js"></script>
+<script src="./dist/simulator.js"></script>
