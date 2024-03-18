@@ -25,4 +25,4 @@ export {Board, Grid} from './board';
 export {Cell} from './cell';
 export {Rule, RuleFunction} from './rule';
 export {RulesManager} from './rules_manager';
-export {World} from './world';
+export {Stats, World} from './world';
