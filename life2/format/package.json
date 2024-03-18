@@ -1,6 +1,6 @@
 {
     "name": "@life2/format",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Textual representation format of a Life2 board state.",
     "keywords": [
         "cellular",
